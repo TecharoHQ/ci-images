@@ -4,6 +4,7 @@
   "description": "Techaro's CI images",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky",
     "test": "true"
   },
   "repository": {
