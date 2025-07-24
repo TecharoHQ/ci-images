@@ -2,9 +2,49 @@ variable "ALPINE_VERSION" { default = "3.22" }
 
 group "default" {
   targets = [
+    "chromium",
+    "firefox",
     "palemoon",
     "ssh-ci",
     "xserver",
+  ]
+}
+
+target "chromium" {
+  context = "./chromium"
+  dockerfile = "./Dockerfile"
+  platforms = [
+    "linux/386",
+    "linux/amd64",
+  ]
+  cache-from = [
+    "type=registry,ref=ghcr.io/techarohq/ci-images/chromium/cache"
+  ]
+  cache-to = [
+    "type=registry,ref=ghcr.io/techarohq/ci-images/chromium/cache"
+  ]
+  pull = true
+  tags = [
+    "ghcr.io/techarohq/ci-images/chromium:latest"
+  ]
+}
+
+target "firefox" {
+  context = "./firefox"
+  dockerfile = "./Dockerfile"
+  platforms = [
+    "linux/386",
+    "linux/amd64",
+  ]
+  cache-from = [
+    "type=registry,ref=ghcr.io/techarohq/ci-images/firefox/cache"
+  ]
+  cache-to = [
+    "type=registry,ref=ghcr.io/techarohq/ci-images/firefox/cache"
+  ]
+  pull = true
+  tags = [
+    "ghcr.io/techarohq/ci-images/firefox:latest"
   ]
 }
 
