@@ -10,7 +10,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "docker.docker"
+        "docker.docker",
+        "fredwangwang.vscode-hcl-format",
+        "hashicorp.hcl"
       ]
     }
   }

@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "docker.docker"
+    "docker.docker",
+    "fredwangwang.vscode-hcl-format",
+    "hashicorp.hcl"
   ]
 }

@@ -36,6 +36,7 @@ jobs:
         with:
           source: .
           push: true
+          targets: palemoon
 
       - name: Build Docker image
         if: github.event_name == 'pull_request'
