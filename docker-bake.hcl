@@ -68,4 +68,7 @@ target "xserver" {
   cache-to = [
     "type=registry,ref=ghcr.io/techarohq/ci-images/xserver/cache"
   ]
+  tags = [
+    "ghcr.io/techarohq/ci-images/xserver:latest"
+  ]
 }
