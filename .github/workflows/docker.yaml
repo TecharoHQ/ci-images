@@ -39,7 +39,7 @@ jobs:
         with:
           source: .
           push: true
-          targets: chromium,firefox,palemoon,ssh-ci,xserver
+          targets: chromium,firefox,palemoon,ssh-ci,trivalent,xserver
 
       - name: Build Docker image
         if: github.event_name == 'pull_request'
@@ -47,4 +47,4 @@ jobs:
         with:
           source: .
           push: false
-          targets: chromium,firefox,palemoon,ssh-ci,xserver
+          targets: chromium,firefox,palemoon,ssh-ci,trivalent,xserver

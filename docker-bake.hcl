@@ -6,6 +6,7 @@ group "default" {
     "firefox",
     "palemoon",
     "ssh-ci",
+    "trivalent",
     "xserver",
   ]
 }
@@ -91,6 +92,26 @@ target "ssh-ci" {
     "ghcr.io/techarohq/ci-images/ssh-ci:latest"
   ]
 }
+
+target "trivalent" {
+  context = "./trivalent"
+  dockerfile = "./Dockerfile"
+  platforms = [
+    "linux/amd64",
+    // "linux/arm64",
+  ]
+  cache-from = [
+    "type=registry,ref=ghcr.io/techarohq/ci-images/trivalent/cache"
+  ]
+  cache-to = [
+    "type=registry,ref=ghcr.io/techarohq/ci-images/trivalent/cache"
+  ]
+  pull = true
+  tags = [
+    "ghcr.io/techarohq/ci-images/trivalent:latest"
+  ]
+}
+
 
 target "xserver" {
   context = "./xserver"
