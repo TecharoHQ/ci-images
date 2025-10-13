@@ -4,6 +4,7 @@ group "default" {
   targets = [
     "chromium",
     "firefox",
+    "librewolf",
     "palemoon",
     "ssh-ci",
     "trivalent",
@@ -46,6 +47,24 @@ target "firefox" {
   pull = true
   tags = [
     "ghcr.io/techarohq/ci-images/firefox:latest"
+  ]
+}
+
+target "librewolf" {
+  context = "./librewolf"
+  dockerfile = "./Dockerfile"
+  platforms = [
+    "linux/amd64",
+  ]
+  cache-from = [
+    "type=registry,ref=ghcr.io/techarohq/ci-images/librewolf/cache"
+  ]
+  cache-to = [
+    "type=registry,ref=ghcr.io/techarohq/ci-images/librewolf/cache"
+  ]
+  pull = true
+  tags = [
+    "ghcr.io/techarohq/ci-images/librewolf:latest"
   ]
 }
 
